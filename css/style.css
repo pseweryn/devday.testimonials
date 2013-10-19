@@ -359,6 +359,34 @@ header{
        background-color: rgb(116, 192, 67); 
 }
 
+.closeFront, .closeBack{
+    display: none;
+    margin: 0 auto;
+}
+.closeFront{
+    background-image: url(/img/u327.png); 
+}
+
+.closeC0{
+    background-image: url(/img/u325.png);
+    display: block;
+}
+
+.closeC1{
+    background-image: url(/img/u337.png);
+    display: block;
+}
+
+.closeC2{
+    background-image: url(/img/u329.png);
+    display: block;
+}
+
+.closeC3{
+    background-image: url(/img/u333.png);
+    display: block;
+}
+
 /* ==|== media queries ======================================================
    EXAMPLE Media Query for Responsive Design.
    This example overrides the primary ('mobile first') styles
