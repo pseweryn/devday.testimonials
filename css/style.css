@@ -261,9 +261,6 @@ header{
 .tileColumn{
     position: relative;
 }
-.tileContainer{
-
-}
 
 .tileContainer > div{
     min-height: 180px;
