@@ -218,14 +218,101 @@ td { vertical-align: top; }
    Author:
    ========================================================================== */
 
+body {
+  background-image: url(/img/u6.jpg);
+  background-position: top left;
+  background-repeat: no-repeat;
+  text-align:left;
+}
 
+header{
+    background-color: #fff;
+    min-height: 78px;
+}
 
+.logo {
+    margin-top: 15px;
+}
 
+#abblogo{
+    margin-top: 5px;
+}
 
+.overlay{
+    height:100%;
+    position:fixed;
+}
 
+.alpha60 {
+    /* Fallback for web browsers that don't support RGBa */
+    background-color: rgb(102, 102, 102);
+    /* RGBa with 0.6 opacity */
+    background-color: rgba(102, 102, 102, 0.6);
+    /* For IE 5.5 - 7*/
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);
+    /* For IE 8*/
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";
+}
 
+.summary h4{
+    text-transform: uppercase;
+}
 
+.tileColumn{
+    position: relative;
+}
+.tileContainer{
+    position: absolute;
+    top: 140px;
+}
 
+.tileContainer > div{
+    min-height: 180px;
+    min-width: 335px;
+}
+
+.tileContainer > div:hover{
+    cursor: pointer;
+}
+
+.networkTile{
+   background-color: rgb(11, 116, 173); 
+   background-color: rgba(11, 116, 173, 0.9); 
+   float: left;
+} 
+.networkTile:hover{
+   background-color: rgb(11, 116, 173); 
+} 
+
+.feedbackTile{
+   background-color: rgb(96, 96, 96); 
+   background-color: rgba(96, 96, 96, 0.9); 
+   float: left;
+}
+
+.feedbackTile:hover{
+   background-color: rgb(96, 96, 96); 
+}
+
+.statsTile{
+   background-color: rgb(205, 220, 40); 
+   background-color: rgba(205, 220, 40, 0.9); 
+    float: right;
+} 
+
+.statsTile:hover{
+   background-color: rgb(205, 220, 40); 
+} 
+
+.photosTile{
+   background-color: rgb(116, 192, 67); 
+   background-color: rgba(116, 192, 67, 0.9); 
+    float: right;
+}
+
+.photosTile:hover{
+   background-color: rgb(116, 192, 67); 
+}
 
 
 
@@ -239,8 +326,14 @@ td { vertical-align: top; }
    Modify as content requires.
    ========================================================================== */
 
-@media only screen and (min-width: 35em) {
+@media only screen and (min-width: 768px) {
   /* Style adjustments for viewports that meet the condition */
+    body{
+       background-size: 100%; 
+    }
+    #abblogo{
+        float: right;
+    }    
 }
 
 

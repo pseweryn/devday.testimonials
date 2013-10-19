@@ -10,8 +10,8 @@ body {
   font-size: 100%; }
 
 body {
-  background: white;
-  color: #222222;
+  background-color: rgba(102, 102, 102, 1);
+  color: #fff;
   padding: 0;
   margin: 0;
   font-family: 'Open Sans', 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
@@ -532,16 +532,16 @@ p {
 /* Default header styles */
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Open Sans', 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
-  font-weight: bold;
+  font-weight: normal;
   font-style: normal;
-  color: #75c044;
+  color: #fff;
   text-rendering: optimizeLegibility;
   margin-top: 0.2em;
   margin-bottom: 0.5em;
   line-height: 1.2125em; }
   h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {
     font-size: 60%;
-    color: #c9e7b6;
+    color: #fff;
     line-height: 0; }
 
 h1 {
