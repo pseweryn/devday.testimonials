@@ -221,7 +221,7 @@ td { vertical-align: top; }
 body {
   background-image: url(/img/u6.jpg);
   background-position: top left;
-  background-repeat: no-repeat;
+  background-repeat: repeat-y;
   text-align:left;
 }
 
@@ -262,13 +262,13 @@ header{
     position: relative;
 }
 .tileContainer{
-    position: absolute;
-    top: 140px;
+
 }
 
 .tileContainer > div{
     min-height: 180px;
     min-width: 335px;
+    float: left;
 }
 
 .tileContainer > div:hover{
@@ -278,7 +278,6 @@ header{
 .networkTile{
    background-color: rgb(11, 116, 173); 
    background-color: rgba(11, 116, 173, 0.9); 
-   float: left;
 }
 
 .networkTile:hover{
@@ -288,7 +287,6 @@ header{
 .feedbackTile{
    background-color: rgb(96, 96, 96); 
    background-color: rgba(96, 96, 96, 0.9); 
-   float: left;
 }
 
 .feedbackTile:hover{
@@ -298,7 +296,6 @@ header{
 .statsTile{
    background-color: rgb(205, 220, 40); 
    background-color: rgba(205, 220, 40, 0.9); 
-    float: right;
 } 
 
 .statsTile:hover{
@@ -308,7 +305,6 @@ header{
 .photosTile{
    background-color: rgb(116, 192, 67); 
    background-color: rgba(116, 192, 67, 0.9); 
-    float: right;
 }
 
 .photosTile:hover{
@@ -358,7 +354,11 @@ header{
     }
     #abblogo{
         float: right;
-    }    
+    }  
+    .tileContainer{
+        position: absolute;
+        top: 140px;
+    } 
 }
 
 
