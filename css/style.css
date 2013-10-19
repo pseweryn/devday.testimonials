@@ -279,7 +279,8 @@ header{
    background-color: rgb(11, 116, 173); 
    background-color: rgba(11, 116, 173, 0.9); 
    float: left;
-} 
+}
+
 .networkTile:hover{
    background-color: rgb(11, 116, 173); 
 } 
@@ -314,11 +315,35 @@ header{
    background-color: rgb(116, 192, 67); 
 }
 
+.icon{
+    background-size: 100%; /*TO DO: add fallback for IE*/
+    display: inline-block;
+    height: 60px;
+    width: 60px;
+    margin-top: 10px;
+}
+.twitterIco{
+    background-image: url(/img/u36.png);
+    height: 40px;
+    width: 40px;
+} 
 
+.tubeIco{
+   background-image: url(/img/u32.png); 
+   margin-left: -15px;
+}
 
+.feedbackIco{
+   background-image: url(/img/u62.png); 
+}
 
+.statsIco{
+   background-image: url(/img/u51.png); 
+}
 
-
+.photosIco{
+   background-image: url(/img/u75.png); 
+}
 
 /* ==|== media queries ======================================================
    EXAMPLE Media Query for Responsive Design.
