@@ -239,8 +239,8 @@ select {
     position: relative;
     margin-left: 83.33333%; }
 
-  [class*="column"] + [class*="column"]:last-child {
-    float: right; }
+/* [class*="column"] + [class*="column"]:last-child {
+    float: right; }*/ 
 
   [class*="column"] + [class*="column"].end {
     float: left; }
@@ -474,7 +474,11 @@ select {
 
   .column.large-uncentered.opposite,
   .columns.large-uncentered.opposite {
-    float: right !important; } }
+    float: right !important; }
+
+  [class*="column"] + [class*="column"]:last-child {
+    float: right; }
+}
 p.lead {
   font-size: 1.21875em;
   line-height: 1.6; }

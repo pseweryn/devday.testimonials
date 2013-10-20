@@ -5,28 +5,25 @@
 $(function () {
     $('.pic').magnificPopup({
         delegate: 'a',
-		type: 'image',
+        type: 'image',
         gallery: {
-			enabled: true,
-			navigateByImgClick: true,
-			preload: [0,1] // Will preload 0 - before current, and 1 after the current image
-		}
+            enabled: true,
+            navigateByImgClick: true
+        }
     });
     $('.tileContainer > div').each(function (i) {
         $(this).click(function () {
             var $cube = $('.cube.c' + i + '');
-            if ($cube.is(":visible")) {
-                $cube.slideUp('fast');
-            } else {
-                $cube.slideDown('fast', function () {
-                    $('#closeBack').addClass('closeC' + i + '');
-                    $('.closeFront').show();
-                });
-            }
+            $cube.slideDown('fast', function () {
+                $('.alpha60').hide();
+                $('#closeBack').addClass('closeC' + i + '');
+                $('.closeFront').show();
+            });
         })
     })
     $('.close').click(function () {
         $('.cube').hide();
+        $('.alpha60').show();
         $('#closeBack').removeClass().addClass('icon');
         $('.closeFront').hide();
     })

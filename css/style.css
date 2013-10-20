@@ -230,8 +230,12 @@ header{
     min-height: 78px;
 }
 
-.logo {
+.logoContainer {
     margin-top: 15px;
+}
+
+.abblogoContainer{
+    float: right;
 }
 
 #abblogo{
@@ -240,7 +244,6 @@ header{
 
 .overlay{
     height:100%;
-    position:fixed;
 }
 
 .alpha60 {
@@ -254,17 +257,22 @@ header{
     -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";
 }
 
+.summary {
+    padding-top: 30px;
+    padding-bottom: 15px;
+}
+
 .summary h4{
     text-transform: uppercase;
 }
 
 .tileColumn{
     position: relative;
+    padding-bottom: 30px;
 }
 
 .tileContainer > div{
     min-height: 180px;
-    min-width: 335px;
     float: left;
 }
 
@@ -340,7 +348,7 @@ header{
 
 .cube {
     display: none;
-    bottom: -78px;
+    bottom: 0px;
 }
 
 .network{
@@ -470,7 +478,10 @@ header{
     }
     #abblogo{
         float: right;
-    }  
+    }
+    .overlay{
+        position:fixed;
+    }
     .tileContainer{
         position: absolute;
         top: 140px;
@@ -484,8 +495,8 @@ header{
     .cubeHeader .icon{
         margin-bottom: -20px;
     }
-    .wider{
-        width: 150%;
+    .cube {
+        bottom: -78px;
     }
     .font28{
         font-size: 28px;
