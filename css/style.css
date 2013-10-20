@@ -408,10 +408,6 @@ header{
     margin: 0 auto;
 }
 
-.cubeHeader .icon{
-    margin-bottom: -20px;
-}
-
 .review{
     background-color: #fff;
     color: #666;
@@ -457,6 +453,10 @@ header{
     background-color: #81CFFA;
 }
 
+.pic{
+    display: inline-block;
+}
+
 /* ==|== media queries ======================================================
    EXAMPLE Media Query for Responsive Design.
    This example overrides the primary ('mobile first') styles
@@ -480,6 +480,12 @@ header{
     }
     .cubeHeader h4, .filters h4{
         display: inline;
+    }
+    .cubeHeader .icon{
+        margin-bottom: -20px;
+    }
+    .wider{
+        width: 150%;
     }
 }
 

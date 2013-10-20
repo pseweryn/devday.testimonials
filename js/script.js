@@ -3,6 +3,15 @@
 */
 
 $(function () {
+    $('.pic').magnificPopup({
+        delegate: 'a',
+		type: 'image',
+        gallery: {
+			enabled: true,
+			navigateByImgClick: true,
+			preload: [0,1] // Will preload 0 - before current, and 1 after the current image
+		}
+    });
     $('.tileContainer > div').each(function (i) {
         $(this).click(function () {
             var $cube = $('.cube.c' + i + '');
@@ -31,7 +40,7 @@ $(function () {
         } else {
             var cl = $h.attr('class');
             $reviews.find('.review').hide();
-            $reviews.find('.review.'+ cl + '').show();
+            $reviews.find('.review.' + cl + '').show();
         }
         $h.addClass('lightBlue');
     })
