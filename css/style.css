@@ -404,6 +404,45 @@ header{
     display: block !important;
 }
 
+.cubeHeader{
+    margin: 0 auto;
+}
+
+.cubeHeader h4{
+    display: inline;
+}
+
+.review{
+    background-color: #fff;
+    color: #666;
+    text-shadow: none;
+    float: left;
+    margin: 10px;
+    box-shadow:3px 3px 5px rgba(0, 0, 0, 0.3490196);
+    -webkit-box-shadow:3px 3px 5px rgba(0, 0, 0, 0.3490196);
+    -moz-box-shadow:3px 3px 5px rgba(0, 0, 0, 0.3490196);
+}
+
+.review p{
+    padding: 10px;
+}
+
+
+.review a{
+    font-size: 16px;
+    color: #007DC0;
+    text-align: right;
+    float: right;
+}
+
+.review span.reviewer{
+    font-weight: 700;
+}
+
+.review span.reviewerContact{
+    font-size: 13px;
+}
+
 /* ==|== media queries ======================================================
    EXAMPLE Media Query for Responsive Design.
    This example overrides the primary ('mobile first') styles
@@ -422,6 +461,9 @@ header{
         position: absolute;
         top: 140px;
     } 
+    .review{
+        width: 45%;
+    }
 }
 
 
