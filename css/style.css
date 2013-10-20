@@ -376,8 +376,10 @@ header{
     margin: 0 auto;
     cursor: pointer;
     position: absolute;
-    top: 22%;
-    left: 40%;
+    top: 11px;
+    left: 0;
+    right: 0;
+    bottom: 0;
     width: 27px;
     height: 27px;
 }
@@ -420,9 +422,6 @@ header{
         position: absolute;
         top: 140px;
     } 
-    .closeFront{
-        left: 47%;
-    }
 }
 
 
