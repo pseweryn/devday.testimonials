@@ -404,12 +404,8 @@ header{
     display: block !important;
 }
 
-.cubeHeader{
+.centered{
     margin: 0 auto;
-}
-
-.cubeHeader h4{
-    display: inline;
 }
 
 .cubeHeader .icon{
@@ -447,6 +443,20 @@ header{
     font-size: 13px;
 }
 
+.cubeHeader, .filters{
+    padding: 20px;
+}
+
+.filters h4{
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.lightBlue{
+    background-color: #81CFFA;
+}
+
 /* ==|== media queries ======================================================
    EXAMPLE Media Query for Responsive Design.
    This example overrides the primary ('mobile first') styles
@@ -467,6 +477,9 @@ header{
     } 
     .review{
         width: 45%;
+    }
+    .cubeHeader h4, .filters h4{
+        display: inline;
     }
 }
 

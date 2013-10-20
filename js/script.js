@@ -21,6 +21,20 @@ $(function () {
         $('#closeBack').removeClass().addClass('icon');
         $('.closeFront').hide();
     })
+
+    $('.filters h4').click(function () {
+        $('.filters h4').removeClass('lightBlue');
+        var $h = $(this);
+        var $reviews = $h.parent().next();
+        if ($h.hasClass('all')) {
+            $reviews.find('.review').show();
+        } else {
+            var cl = $h.attr('class');
+            $reviews.find('.review').hide();
+            $reviews.find('.review.'+ cl + '').show();
+        }
+        $h.addClass('lightBlue');
+    })
 }); 
 
 
