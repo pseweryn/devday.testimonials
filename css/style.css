@@ -487,6 +487,21 @@ header{
     .wider{
         width: 150%;
     }
+    .font28{
+        font-size: 28px;
+    }
+    .font36{
+        font-size: 36px;
+    }
+    .font48 {
+        font-size: 48px;
+    }
+    .font55{
+        font-size: 55px;
+    }
+    .font100{
+        font-size: 100px;
+    }
 }
 
 
