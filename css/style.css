@@ -412,6 +412,10 @@ header{
     display: inline;
 }
 
+.cubeHeader .icon{
+    margin-bottom: -20px;
+}
+
 .review{
     background-color: #fff;
     color: #666;
