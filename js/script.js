@@ -9,10 +9,17 @@ $(function () {
             if ($cube.is(":visible")) {
                 $cube.slideUp('fast');
             } else {
-                $cube.slideDown('fast');
-                $('.closeBack').addClass('closeC' + i + '');
+                $cube.slideDown('fast', function () {
+                    $('#closeBack').addClass('closeC' + i + '');
+                    $('.closeFront').show();
+                });
             }
         })
+    })
+    $('.close').click(function () {
+        $('.cube').hide();
+        $('#closeBack').removeClass().addClass('icon');
+        $('.closeFront').hide();
     })
 }); 
 

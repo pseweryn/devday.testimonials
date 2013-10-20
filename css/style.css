@@ -359,32 +359,47 @@ header{
        background-color: rgb(116, 192, 67); 
 }
 
-.closeFront, .closeBack{
+.close{
+    position: relative;
+}
+
+#closeBack{
     display: none;
     margin: 0 auto;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
 }
 .closeFront{
     background-image: url(/img/u327.png); 
+    display: none;
+    margin: 0 auto;
+    cursor: pointer;
+    position: absolute;
+    top: 22%;
+    left: 40%;
+    width: 27px;
+    height: 27px;
 }
 
 .closeC0{
     background-image: url(/img/u325.png);
-    display: block;
+    display: block !important;
 }
 
 .closeC1{
     background-image: url(/img/u337.png);
-    display: block;
+    display: block !important;
 }
 
 .closeC2{
     background-image: url(/img/u329.png);
-    display: block;
+    display: block !important;
 }
 
 .closeC3{
     background-image: url(/img/u333.png);
-    display: block;
+    display: block !important;
 }
 
 /* ==|== media queries ======================================================
@@ -405,6 +420,9 @@ header{
         position: absolute;
         top: 140px;
     } 
+    .closeFront{
+        left: 47%;
+    }
 }
 
 
