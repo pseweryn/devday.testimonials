@@ -272,7 +272,7 @@ header{
 }
 
 .tileContainer > div{
-    min-height: 180px;
+    min-height: 200px;
     float: left;
 }
 
