@@ -227,7 +227,7 @@ body {
 
 header{
     background-color: #fff;
-    min-height: 78px;
+    min-height: 60px;
 }
 
 .logoContainer {
@@ -481,6 +481,9 @@ a.reviewLink {
   /* Style adjustments for viewports that meet the condition */
     body{
        background-size: 100%; 
+    }
+    header{
+        min-height: 78px;
     }
     #abblogo{
         float: right;
