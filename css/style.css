@@ -522,6 +522,9 @@ a.reviewLink {
     .font100{
         font-size: 100px;
     }
+    .review:nth-child(even){
+        float: right;
+    }
 }
 
 
