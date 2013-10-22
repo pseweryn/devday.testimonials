@@ -16,6 +16,7 @@ $(function () {
             var $cube = $('.cube.c' + i + '');
             $cube.slideDown('fast', function () {
                 $('.alpha60').hide();
+                $('.logoContainer > div').not('.close').css('visibility', 'hidden');
                 $('#closeBack').addClass('closeC' + i + '');
                 $('.closeFront').show();
             });
@@ -24,6 +25,7 @@ $(function () {
     $('.close').click(function () {
         $('.cube').hide();
         $('.alpha60').show();
+        $('.logoContainer > div').not('.close').css('visibility', '');
         $('#closeBack').removeClass().addClass('icon');
         $('.closeFront').hide();
     })
