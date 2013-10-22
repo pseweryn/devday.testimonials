@@ -227,7 +227,7 @@ body {
 
 header{
     background-color: #fff;
-    min-height: 60px;
+    min-height: 65px;
 }
 
 .logoContainer {
@@ -243,7 +243,8 @@ header{
 }
 
 .overlay{
-    height:100%;
+   position: absolute;
+   top: 65px;
 }
 
 .alpha60 {
@@ -348,7 +349,6 @@ header{
 
 .cube {
     display: none;
-    bottom: 0px;
 }
 
 .network{
@@ -421,7 +421,7 @@ header{
     color: #666;
     text-shadow: none;
     float: left;
-    margin: 10px;
+    margin: 10px 10px 10px 0;
     box-shadow:3px 3px 5px rgba(0, 0, 0, 0.3490196);
     -webkit-box-shadow:3px 3px 5px rgba(0, 0, 0, 0.3490196);
     -moz-box-shadow:3px 3px 5px rgba(0, 0, 0, 0.3490196);
@@ -481,6 +481,7 @@ a.reviewLink {
   /* Style adjustments for viewports that meet the condition */
     body{
        background-size: 100%; 
+       position: initial;
     }
     header{
         min-height: 78px;
@@ -489,7 +490,12 @@ a.reviewLink {
         float: right;
     }
     .overlay{
-        position:fixed;
+        height: 150%;
+        position: absolute;
+        top: 78px;
+        bottom: 0;
+        left: 0;
+        right: 0;
     }
     .tileContainer{
         position: absolute;
@@ -503,9 +509,6 @@ a.reviewLink {
     }
     .cubeHeader .icon{
         margin-bottom: -20px;
-    }
-    .cube {
-        bottom: -78px;
     }
     .font28{
         font-size: 28px;
@@ -521,6 +524,9 @@ a.reviewLink {
     }
     .font100{
         font-size: 100px;
+    }
+    .review{
+        margin-left: 10px;
     }
     .review:nth-child(even){
         float: right;
