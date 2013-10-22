@@ -799,8 +799,8 @@ button, .button {
   padding-bottom: 0.8125em;
   padding-left: 1.5em;
   font-size: 1em;
-  background-color: #75c044;
-  border-color: #5e9c35;
+  background-color: #007DC0;
+  border-color: #007DC0;
   color: white; }
   button:hover, button:focus, .button:hover, .button:focus {
     background-color: #3a3a3a;

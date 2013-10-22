@@ -471,6 +471,132 @@ a.reviewLink {
     display: inline-block;
 }
 
+.f-srsly{
+    background-image: url(../img/feedback/u258.png);
+}
+
+.f-weak{
+    background-image: url(../img/feedback/u254.png);
+}
+
+.f-ok{
+    background-image: url(../img/feedback/u250.png);
+}
+
+.f-awesome{
+    background-image: url(../img/feedback/u242.png);
+}
+
+.f-notBad{
+    background-image: url(../img/feedback/u246.png);
+}
+
+.fb-form{
+    position: relative;
+}
+
+.f-container{
+   display: inline-block;
+   margin: 5px;
+    min-height: 95px;
+    min-width: 110px;
+}
+
+.f-ico{
+    background-color: #868686;
+    margin: 5px;
+    min-height: 95px;
+    min-width: 115px;
+    position: relative;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    float: left;
+    cursor: pointer;
+}
+
+.f-ico > span{
+    display: block;
+    position: absolute;
+    top: 15px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+}
+
+.f-radio{
+    max-width: 120px;
+    padding-left: 10px;
+    position: relative;
+}
+
+textarea{
+    border: 1px solid #fff;
+    background-color: #868686;
+    color: #fff;
+    margin-bottom: 20px;
+    resize: none;
+    width: 100%;
+    height: 130px;
+    box-shadow:3px 3px 5px rgba(0, 0, 0, 0.3490196);
+    -webkit-box-shadow:3px 3px 5px rgba(0, 0, 0, 0.3490196);
+    -moz-box-shadow:3px 3px 5px rgba(0, 0, 0, 0.3490196);
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+}
+
+label.radioLabel{
+    display: inline;
+    color: #fff;
+    min-width: 300px;
+}
+
+span.radioSpan{
+}
+ 
+span.radioSpan:after{
+}
+ 
+input[type="radio"]{
+    display: inline;
+	position: absolute;
+	left: 0;
+	margin: 0;
+	filter:alpha(opacity=0);
+	-moz-opacity:0;
+	-khtml-opacity: 0;
+	opacity: 0;
+    cursor: pointer;
+}
+ 
+input[type="radio"] + span{
+    display: none;
+	border: 1px solid #fff;
+    position: absolute;
+    bottom: 28px;
+    left: 5px;
+    min-height: 95px;
+    min-width: 115px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    float: left;
+    cursor: pointer;
+}
+ 
+input[type="radio"] + span.radioSpan:after{
+}
+ 
+ 
+input[type="radio"]:checked + span{
+	display: inline;
+}
+
+.checked {
+    font-weight: bold
+}
+
 /* ==|== media queries ======================================================
    EXAMPLE Media Query for Responsive Design.
    This example overrides the primary ('mobile first') styles
@@ -530,6 +656,15 @@ a.reviewLink {
     }
     .review:nth-child(even){
         float: right;
+    }
+    .f-radio{
+        display: inline-block;
+    }
+    label.radioLabel{
+        display: block;
+    }
+    input[type="radio"] + span {
+        bottom: 30px;
     }
 }
 

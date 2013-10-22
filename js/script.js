@@ -43,6 +43,17 @@ $(function () {
         }
         $h.addClass('lightBlue');
     })
+
+    $('input[type="radio"]').change(function () {
+        if ($(this).is(':checked')) {
+            $('input[type="radio"]').not($(this)).prop('checked', false);
+        }
+    })
+    $('.f-ico').click(function () {
+        var $radio = $(this).next().find('input[type="radio"]');
+        $radio.prop('checked', true);
+        $('input[type="radio"]').not($radio).prop('checked', false);
+    })
 }); 
 
 
