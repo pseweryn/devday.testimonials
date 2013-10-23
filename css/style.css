@@ -598,6 +598,7 @@ input[type="radio"]:checked + span{
 }
 
 .arrowContainer{
+    cursor: pointer;
     position: relative;
     top: 30%;    
 }
@@ -614,10 +615,8 @@ input[type="radio"]:checked + span{
     transform: rotate(180deg);
 }
 
-.blueArrow{
-    background-image: url("../img/u100.png");    
+.arrow{    
     margin: 0 auto;
-    cursor: pointer;
     position: absolute;
     top: 11px;
     left: 0;
@@ -627,15 +626,45 @@ input[type="radio"]:checked + span{
     height: 27px;
 }
 
-.blueArrowBack{
-    background-image: url("../img/u98.png");
+.arrowBack{
     display: block;
     margin: 0 auto;
-    cursor: pointer;
     width: 50px;
     height: 50px;
 }
 
+
+.blueA{
+    background-image: url("../img/u100.png");
+}
+
+.blueB{
+    background-image: url("../img/u98.png");
+}
+
+.lightgreenA{
+    background-image: url("../img/u188.png");
+}
+
+.lightgreenB{
+    background-image: url("../img/u186.png");
+}
+
+.greyA{
+    background-image: url("../img/u217.png");
+}
+
+.greyB{
+    background-image: url("../img/u215.png");
+}
+
+.greenA{
+    background-image: url("../img/u267.png");
+}
+
+.greenB{
+    background-image: url("../img/u265.png");
+}
 /* ==|== media queries ======================================================
    EXAMPLE Media Query for Responsive Design.
    This example overrides the primary ('mobile first') styles
