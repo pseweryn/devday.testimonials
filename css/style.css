@@ -665,6 +665,24 @@ input[type="radio"]:checked + span{
 .greenB{
     background-image: url("../img/u265.png");
 }
+
+.seeYa{
+    background-image: url("../img/u175.png");
+    position: relative;
+    float: right;
+    margin-top: 18px;
+    margin-right: -15px;
+    width: 165px;
+    height: 165px;
+}
+
+.seeYa span{
+    font-size: small;
+    transform: rotate(-45deg);
+    position: absolute;
+    top:  60px;
+    left: 15px;
+}
 /* ==|== media queries ======================================================
    EXAMPLE Media Query for Responsive Design.
    This example overrides the primary ('mobile first') styles
@@ -684,7 +702,7 @@ input[type="radio"]:checked + span{
         float: right;
     }
     .overlay{
-        height: 150%;
+        height: 170%;
         position: absolute;
         top: 78px;
         bottom: 0;
