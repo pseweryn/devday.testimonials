@@ -597,6 +597,45 @@ input[type="radio"]:checked + span{
     font-weight: bold
 }
 
+.arrowContainer{
+    position: relative;
+    top: 30%;    
+}
+
+.left{
+    float: left;
+}
+
+.right{
+    float: right;
+}
+
+.arrowContainer.right span:last-child{
+    transform: rotate(180deg);
+}
+
+.blueArrow{
+    background-image: url("../img/u100.png");    
+    margin: 0 auto;
+    cursor: pointer;
+    position: absolute;
+    top: 11px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 27px;
+    height: 27px;
+}
+
+.blueArrowBack{
+    background-image: url("../img/u98.png");
+    display: block;
+    margin: 0 auto;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+}
+
 /* ==|== media queries ======================================================
    EXAMPLE Media Query for Responsive Design.
    This example overrides the primary ('mobile first') styles
