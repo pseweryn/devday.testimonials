@@ -613,6 +613,8 @@ input[type="radio"]:checked + span{
 
 .arrowContainer.right span:last-child{
     transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
 }
 
 .arrow{    
@@ -679,6 +681,8 @@ input[type="radio"]:checked + span{
 .seeYa span{
     font-size: small;
     transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
     position: absolute;
     top:  60px;
     left: 15px;
