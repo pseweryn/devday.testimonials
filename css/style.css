@@ -347,10 +347,6 @@ header{
    background-image: url(../img/u75.png); 
 }
 
-.cube {
-    display: none;
-}
-
 .network{
        background-color: rgb(11, 116, 173); 
 }
@@ -393,22 +389,22 @@ header{
     height: 27px;
 }
 
-.closeC0{
+.closeC1{
     background-image: url(../img/u325.png);
     display: block !important;
 }
 
-.closeC1{
+.closeC2{
     background-image: url(../img/u337.png);
     display: block !important;
 }
 
-.closeC2{
+.closeC3{
     background-image: url(../img/u329.png);
     display: block !important;
 }
 
-.closeC3{
+.closeC4{
     background-image: url(../img/u333.png);
     display: block !important;
 }
@@ -688,7 +684,6 @@ input[type="radio"]:checked + span{
     }
     .overlay{
         height: 150%;
-        position: absolute;
         top: 78px;
         bottom: 0;
         left: 0;
@@ -788,4 +783,154 @@ input[type="radio"]:checked + span{
   @page { margin: 0.5cm; }
   p, h2, h3 { orphans: 3; widows: 3; }
   h2, h3 { page-break-after: avoid; }
+}
+
+/* ==|== animations =======================================================
+ 
+   animations, keyframes and transitions
+   ========================================================================== */
+
+.perspective {
+	/*position: relative;*/
+	width: 100%;
+	height: 100%;
+	-webkit-perspective: 1200;
+	-moz-perspective: 1200;
+	perspective: 1200;
+	
+	-webkit-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
+	backface-visibility: hidden;
+	
+	-webkit-transform-style: preserve-3d;
+	
+	overflow-y: hidden;
+}
+
+.page {
+	width: 100%;
+	xxx-height: 100%;
+	position: absolute;
+	left: 0;
+	visibility: hidden;
+	overflow: hidden;
+	-webkit-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
+	backface-visibility: hidden;
+	
+	transform: translate3d(0, 0, 0);
+	-webkit-transform: translate3d(0, 0, 0);
+	-moz-transform: translate3d(0, 0, 0);
+	
+	-webkit-transform-style: preserve-3d;
+	-moz-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+	
+	overflow-y: hidden;
+		
+}
+
+#main
+{
+	width: 100%;
+	height: 100%;
+	overflow-x: hidden;
+	overflow-y: hidden;
+	
+	-webkit-backface-visibility: visible;
+	-moz-backface-visibility: visible;
+	backface-visibility: visible;
+	
+	-webkit-transform-style: preserve-3d;
+}
+
+#page_main 
+{
+	width: 100%;
+	xxx-height: 100%;
+	overflow-y: auto;
+	overflow-x: hidden; /*à ne mettre HIDDEN que si on est sûr que rien n'important ne dépasse à droite*/
+	
+	-webkit-backface-visibility: hidden;
+	
+	-webkit-overflow-scrolling: touch;
+	-webkit-transform: translate3d(0,0,0);
+	-webkit-transform: translateZ(0px);
+}
+
+.page-current {
+	visibility: visible;
+	z-index: 1;
+	width: 100%;
+	xxx-height: 100%;
+}
+
+.pt-page-moveToTopFade {
+	-webkit-animation: moveToTopFade .7s ease both;
+	-moz-animation: moveToTopFade .7s ease both;
+	animation: moveToTopFade .7s ease both;
+}
+
+.pt-page-rotateUnfoldBottom {
+	-webkit-transform-origin: 50% 0%;
+	-webkit-animation: rotateUnfoldBottom .7s both ease;
+	-moz-transform-origin: 50% 0%;
+	-moz-animation: rotateUnfoldBottom .7s both ease;
+	transform-origin: 50% 0%;
+	animation: rotateUnfoldBottom .7s both ease;
+}
+
+.pt-page-rotateFoldBottom {
+	-webkit-transform-origin: 50% 0%;
+	-webkit-animation: rotateFoldBottom .7s both ease;
+	-moz-transform-origin: 50% 0%;
+	-moz-animation: rotateFoldBottom .7s both ease;
+	transform-origin: 50% 0%;
+	animation: rotateFoldBottom .7s both ease;
+}
+
+.pt-page-moveFromTopFade {
+	-webkit-animation: moveFromTopFade .7s ease both;
+	-moz-animation: moveFromTopFade .7s ease both;
+	animation: moveFromTopFade .7s ease both;
+}
+
+@-webkit-keyframes moveToTopFade {
+	to { opacity: 0.3; -webkit-transform: translateY(-100%); }
+}
+@-moz-keyframes moveToTopFade {
+	to { opacity: 0.3; -moz-transform: translateY(-100%); }
+}
+@keyframes moveToTopFade {
+	to { opacity: 0.3; transform: translateY(-100%); }
+}
+
+@-webkit-keyframes rotateUnfoldBottom {
+	from { opacity: 0; -webkit-transform: translateY(100%) rotateX(-90deg); }
+}
+@-moz-keyframes rotateUnfoldBottom {
+	from { opacity: 0; -moz-transform: translateY(100%) rotateX(-90deg); }
+}
+@keyframes rotateUnfoldBottom {
+	from { opacity: 0; transform: translateY(100%) rotateX(-90deg); }
+}
+
+@-webkit-keyframes rotateFoldBottom {
+	to { opacity: 0; -webkit-transform: translateY(100%) rotateX(-90deg); }
+}
+@-moz-keyframes rotateFoldBottom {
+	to { opacity: 0; -moz-transform: translateY(100%) rotateX(-90deg); }
+}
+@keyframes rotateFoldBottom {
+	to { opacity: 0; transform: translateY(100%) rotateX(-90deg); }
+}
+
+@-webkit-keyframes moveFromTopFade {
+	from { opacity: 0.3; -webkit-transform: translateY(-100%); }
+}
+@-moz-keyframes moveFromTopFade {
+	from { opacity: 0.3; -moz-transform: translateY(-100%); }
+}
+@keyframes moveFromTopFade {
+	from { opacity: 0.3; transform: translateY(-100%); }
 }
