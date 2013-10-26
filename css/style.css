@@ -513,7 +513,6 @@ a.reviewLink {
     border-radius: 5px;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
-    float: left;
     cursor: pointer;
 }
 
@@ -524,12 +523,6 @@ a.reviewLink {
     left: 0;
     right: 0;
     margin: 0 auto;
-}
-
-.f-radio{
-    max-width: 120px;
-    padding-left: 10px;
-    position: relative;
 }
 
 textarea{
@@ -551,13 +544,7 @@ textarea{
 label.radioLabel{
     display: inline;
     color: #fff;
-    min-width: 300px;
-}
-
-span.radioSpan{
-}
- 
-span.radioSpan:after{
+    padding-left: 10px;
 }
  
 input[type="radio"]{
@@ -576,7 +563,7 @@ input[type="radio"] + span{
     display: none;
 	border: 1px solid #fff;
     position: absolute;
-    bottom: 28px;
+    top: 4px;
     left: 5px;
     min-height: 95px;
     min-width: 115px;
@@ -586,10 +573,6 @@ input[type="radio"] + span{
     float: left;
     cursor: pointer;
 }
- 
-input[type="radio"] + span.radioSpan:after{
-}
- 
  
 input[type="radio"]:checked + span{
 	display: inline;
@@ -744,15 +727,6 @@ input[type="radio"]:checked + span{
     }
     .review:nth-child(even){
         float: right;
-    }
-    .f-radio{
-        display: inline-block;
-    }
-    label.radioLabel{
-        display: block;
-    }
-    input[type="radio"] + span {
-        bottom: 30px;
     }
     .arrowContainer{
         top: 30%;    
