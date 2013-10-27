@@ -896,6 +896,36 @@ input[type="radio"]:checked + span{
 	animation: moveFromTopFade .7s ease both;
 }
 
+.pt-page-moveToLeftFade {
+	-webkit-animation: moveToLeftFade .7s ease both;
+	-moz-animation: moveToLeftFade .7s ease both;
+	animation: moveToLeftFade .7s ease both;
+}
+
+.pt-page-rotateUnfoldRight {
+	-webkit-transform-origin: 0% 50%;
+	-webkit-animation: rotateUnfoldRight .7s both ease;
+	-moz-transform-origin: 0% 50%;
+	-moz-animation: rotateUnfoldRight .7s both ease;
+	transform-origin: 0% 50%;
+	animation: rotateUnfoldRight .7s both ease;
+}
+
+.pt-page-moveToRightFade {
+	-webkit-animation: moveToRightFade .7s ease both;
+	-moz-animation: moveToRightFade .7s ease both;
+	animation: moveToRightFade .7s ease both;
+}
+
+.pt-page-rotateUnfoldLeft {
+	-webkit-transform-origin: 100% 50%;
+	-webkit-animation: rotateUnfoldLeft .7s both ease;
+	-moz-transform-origin: 100% 50%;
+	-moz-animation: rotateUnfoldLeft .7s both ease;
+	transform-origin: 100% 50%;
+	animation: rotateUnfoldLeft .7s both ease;
+}
+
 @-webkit-keyframes moveToTopFade {
 	to { opacity: 0.3; -webkit-transform: translateY(-100%); }
 }
@@ -934,4 +964,44 @@ input[type="radio"]:checked + span{
 }
 @keyframes moveFromTopFade {
 	from { opacity: 0.3; transform: translateY(-100%); }
+}
+
+@-webkit-keyframes moveToLeftFade {
+	to { opacity: 0.3; -webkit-transform: translateX(-100%); }
+}
+@-moz-keyframes moveToLeftFade {
+	to { opacity: 0.3; -moz-transform: translateX(-100%); }
+}
+@keyframes moveToLeftFade {
+	to { opacity: 0.3; transform: translateX(-100%); }
+}
+
+@-webkit-keyframes rotateUnfoldRight {
+	from { opacity: 0; -webkit-transform: translateX(100%) rotateY(90deg); }
+}
+@-moz-keyframes rotateUnfoldRight {
+	from { opacity: 0; -moz-transform: translateX(100%) rotateY(90deg); }
+}
+@keyframes rotateUnfoldRight {
+	from { opacity: 0; transform: translateX(100%) rotateY(90deg); }
+}
+
+@-webkit-keyframes moveToRightFade {
+	to { opacity: 0.3; -webkit-transform: translateX(100%); }
+}
+@-moz-keyframes moveToRightFade {
+	to { opacity: 0.3; -moz-transform: translateX(100%); }
+}
+@keyframes moveToRightFade {
+	to { opacity: 0.3; transform: translateX(100%); }
+}
+
+@-webkit-keyframes rotateUnfoldLeft {
+	from { opacity: 0; -webkit-transform: translateX(-100%) rotateY(-90deg); }
+}
+@-moz-keyframes rotateUnfoldLeft {
+	from { opacity: 0; -moz-transform: translateX(-100%) rotateY(-90deg); }
+}
+@keyframes rotateUnfoldLeft {
+	from { opacity: 0; transform: translateX(-100%) rotateY(-90deg); }
 }

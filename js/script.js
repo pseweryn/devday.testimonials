@@ -126,7 +126,7 @@ $(function () {
                     hideCloseIcon();
                 } else {
                     $('#closeBack').removeClass().addClass('icon').addClass('closeC' + prev_ind + '');
-                    openPage('top', prev_ind);
+                    openPage('left', prev_ind);
                 }
 
             }
@@ -138,7 +138,7 @@ $(function () {
                     hideCloseIcon();
                 } else {
                     $('#closeBack').removeClass().addClass('icon').addClass('closeC' + next_ind + '');
-                    openPage('top', next_ind);
+                    openPage('right', next_ind);
                 }
             }
         })
@@ -181,7 +181,14 @@ $(function () {
                 outClass = 'pt-page-moveToTopFade';
                 inClass = 'pt-page-rotateUnfoldBottom';
                 break;
-
+            case 'right':
+                outClass = 'pt-page-moveToLeftFade';
+                inClass = 'pt-page-rotateUnfoldRight';
+                break;
+            case 'left':
+                outClass = 'pt-page-moveToRightFade';
+                inClass = 'pt-page-rotateUnfoldLeft';
+                break;
         }
 
         $currPage.addClass(outClass).bind(animEndEventName, onInAnimation);
