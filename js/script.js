@@ -3,8 +3,10 @@
 */
 
 $(function () {
-
-    var offsetnote = 78;
+    var is_chrome = navigator.userAgent.indexOf('Chrome') > -1;
+    var is_explorer = navigator.userAgent.indexOf('MSIE') > -1;
+    var is_firefox = navigator.userAgent.indexOf('Firefox') > -1;
+    //var offsetnote = is_chrome || is_explorer ? 0 : 78;
     var $main = $('#main');
     var $pages = $main.children('div.page');
     var $close = $('.close');
@@ -24,6 +26,12 @@ $(function () {
     var animEndEventName = animEndEventNames[Modernizr.prefixed('animation')];
     // support css animations
     var support = Modernizr.cssanimations;
+
+    function dirtyTopHack() {
+        if (is_chrome || is_explorer) {
+            $('.page').css('top', '0');
+        }
+    }
 
     function setPageClasses() {
         $pages.each(function () {
@@ -229,6 +237,7 @@ $(function () {
 
     function init() {
 
+        dirtyTopHack();
         setPageClasses();
 
         closeClick();
