@@ -834,6 +834,11 @@ input[type="radio"]:checked + span{
 		
 }
 
+.page-current {
+	visibility: visible;
+	z-index: 1;
+}
+
 #main
 {
 	width: 100%;
@@ -861,79 +866,33 @@ input[type="radio"]:checked + span{
 	-webkit-transform: translateZ(0px);
 }
 
-.page-current {
-	visibility: visible;
-	z-index: 1;
+
+.rotateFoldTop {
+	-webkit-transform-origin: 50% 100%;
+	-webkit-animation: rotateFoldTop .7s both ease;
+	-moz-transform-origin: 50% 100%;
+	-moz-animation: rotateFoldTop .7s both ease;
+	transform-origin: 50% 100%;
+	animation: rotateFoldTop .7s both ease;
 }
 
-.pt-page-moveToTopFade {
-	-webkit-animation: moveToTopFade .7s ease both;
-	-moz-animation: moveToTopFade .7s ease both;
-	animation: moveToTopFade .7s ease both;
+@-webkit-keyframes rotateFoldTop {
+	to { opacity: 0; -webkit-transform: translateY(-100%) rotateX(90deg); }
+}
+@-moz-keyframes rotateFoldTop {
+	to { opacity: 0; -moz-transform: translateY(-100%) rotateX(90deg); }
+}
+@keyframes rotateFoldTop {
+	to { opacity: 0; transform: translateY(-100%) rotateX(90deg); }
 }
 
-.pt-page-rotateUnfoldBottom {
+.rotateUnfoldBottom {
 	-webkit-transform-origin: 50% 0%;
 	-webkit-animation: rotateUnfoldBottom .7s both ease;
 	-moz-transform-origin: 50% 0%;
 	-moz-animation: rotateUnfoldBottom .7s both ease;
 	transform-origin: 50% 0%;
 	animation: rotateUnfoldBottom .7s both ease;
-}
-
-.pt-page-rotateFoldBottom {
-	-webkit-transform-origin: 50% 0%;
-	-webkit-animation: rotateFoldBottom .7s both ease;
-	-moz-transform-origin: 50% 0%;
-	-moz-animation: rotateFoldBottom .7s both ease;
-	transform-origin: 50% 0%;
-	animation: rotateFoldBottom .7s both ease;
-}
-
-.pt-page-moveFromTopFade {
-	-webkit-animation: moveFromTopFade .7s ease both;
-	-moz-animation: moveFromTopFade .7s ease both;
-	animation: moveFromTopFade .7s ease both;
-}
-
-.pt-page-moveToLeftFade {
-	-webkit-animation: moveToLeftFade .7s ease both;
-	-moz-animation: moveToLeftFade .7s ease both;
-	animation: moveToLeftFade .7s ease both;
-}
-
-.pt-page-rotateUnfoldRight {
-	-webkit-transform-origin: 0% 50%;
-	-webkit-animation: rotateUnfoldRight .7s both ease;
-	-moz-transform-origin: 0% 50%;
-	-moz-animation: rotateUnfoldRight .7s both ease;
-	transform-origin: 0% 50%;
-	animation: rotateUnfoldRight .7s both ease;
-}
-
-.pt-page-moveToRightFade {
-	-webkit-animation: moveToRightFade .7s ease both;
-	-moz-animation: moveToRightFade .7s ease both;
-	animation: moveToRightFade .7s ease both;
-}
-
-.pt-page-rotateUnfoldLeft {
-	-webkit-transform-origin: 100% 50%;
-	-webkit-animation: rotateUnfoldLeft .7s both ease;
-	-moz-transform-origin: 100% 50%;
-	-moz-animation: rotateUnfoldLeft .7s both ease;
-	transform-origin: 100% 50%;
-	animation: rotateUnfoldLeft .7s both ease;
-}
-
-@-webkit-keyframes moveToTopFade {
-	to { opacity: 0.3; -webkit-transform: translateY(-100%); }
-}
-@-moz-keyframes moveToTopFade {
-	to { opacity: 0.3; -moz-transform: translateY(-100%); }
-}
-@keyframes moveToTopFade {
-	to { opacity: 0.3; transform: translateY(-100%); }
 }
 
 @-webkit-keyframes rotateUnfoldBottom {
@@ -946,6 +905,15 @@ input[type="radio"]:checked + span{
 	from { opacity: 0; transform: translateY(100%) rotateX(-90deg); }
 }
 
+.rotateFoldBottom {
+	-webkit-transform-origin: 50% 0%;
+	-webkit-animation: rotateFoldBottom .7s both ease;
+	-moz-transform-origin: 50% 0%;
+	-moz-animation: rotateFoldBottom .7s both ease;
+	transform-origin: 50% 0%;
+	animation: rotateFoldBottom .7s both ease;
+}
+
 @-webkit-keyframes rotateFoldBottom {
 	to { opacity: 0; -webkit-transform: translateY(100%) rotateX(-90deg); }
 }
@@ -956,25 +924,53 @@ input[type="radio"]:checked + span{
 	to { opacity: 0; transform: translateY(100%) rotateX(-90deg); }
 }
 
-@-webkit-keyframes moveFromTopFade {
-	from { opacity: 0.3; -webkit-transform: translateY(-100%); }
-}
-@-moz-keyframes moveFromTopFade {
-	from { opacity: 0.3; -moz-transform: translateY(-100%); }
-}
-@keyframes moveFromTopFade {
-	from { opacity: 0.3; transform: translateY(-100%); }
+.rotateUnfoldTop {
+	-webkit-transform-origin: 50% 100%;
+	-webkit-animation: rotateUnfoldTop .7s both ease;
+	-moz-transform-origin: 50% 100%;
+	-moz-animation: rotateUnfoldTop .7s both ease;
+	transform-origin: 50% 100%;
+	animation: rotateUnfoldTop .7s both ease;
 }
 
-@-webkit-keyframes moveToLeftFade {
-	to { opacity: 0.3; -webkit-transform: translateX(-100%); }
+@-webkit-keyframes rotateUnfoldTop {
+	from { opacity: 0; -webkit-transform: translateY(-100%) rotateX(90deg); }
 }
-@-moz-keyframes moveToLeftFade {
-	to { opacity: 0.3; -moz-transform: translateX(-100%); }
+@-moz-keyframes rotateUnfoldTop {
+	from { opacity: 0; -moz-transform: translateY(-100%) rotateX(90deg); }
 }
-@keyframes moveToLeftFade {
-	to { opacity: 0.3; transform: translateX(-100%); }
+@keyframes rotateUnfoldTop {
+	from { opacity: 0; transform: translateY(-100%) rotateX(90deg); }
 }
+
+.rotateFoldLeft {
+	-webkit-transform-origin: 100% 50%;
+	-webkit-animation: rotateFoldLeft .7s both ease;
+	-moz-transform-origin: 100% 50%;
+	-moz-animation: rotateFoldLeft .7s both ease;
+	transform-origin: 100% 50%;
+	animation: rotateFoldLeft .7s both ease;
+}
+
+@-webkit-keyframes rotateFoldLeft {
+	to { opacity: 0; -webkit-transform: translateX(-100%) rotateY(-90deg); }
+}
+@-moz-keyframes rotateFoldLeft {
+	to { opacity: 0; -moz-transform: translateX(-100%) rotateY(-90deg); }
+}
+@keyframes rotateFoldLeft {
+	to { opacity: 0; transform: translateX(-100%) rotateY(-90deg); }
+}
+
+.rotateUnfoldRight {
+	-webkit-transform-origin: 0% 50%;
+	-webkit-animation: rotateUnfoldRight .7s both ease;
+	-moz-transform-origin: 0% 50%;
+	-moz-animation: rotateUnfoldRight .7s both ease;
+	transform-origin: 0% 50%;
+	animation: rotateUnfoldRight .7s both ease;
+}
+
 
 @-webkit-keyframes rotateUnfoldRight {
 	from { opacity: 0; -webkit-transform: translateX(100%) rotateY(90deg); }
@@ -986,14 +982,32 @@ input[type="radio"]:checked + span{
 	from { opacity: 0; transform: translateX(100%) rotateY(90deg); }
 }
 
-@-webkit-keyframes moveToRightFade {
-	to { opacity: 0.3; -webkit-transform: translateX(100%); }
+.rotateFoldRight {
+	-webkit-transform-origin: 0% 50%;
+	-webkit-animation: rotateFoldRight .7s both ease;
+	-moz-transform-origin: 0% 50%;
+	-moz-animation: rotateFoldRight .7s both ease;
+	transform-origin: 0% 50%;
+	animation: rotateFoldRight .7s both ease;
 }
-@-moz-keyframes moveToRightFade {
-	to { opacity: 0.3; -moz-transform: translateX(100%); }
+
+@-webkit-keyframes rotateFoldRight {
+	to { opacity: 0; -webkit-transform: translateX(100%) rotateY(90deg); }
 }
-@keyframes moveToRightFade {
-	to { opacity: 0.3; transform: translateX(100%); }
+@-moz-keyframes rotateFoldRight {
+	to { opacity: 0; -moz-transform: translateX(100%) rotateY(90deg); }
+}
+@keyframes rotateFoldRight {
+	to { opacity: 0; transform: translateX(100%) rotateY(90deg); }
+}
+
+.rotateUnfoldLeft {
+	-webkit-transform-origin: 100% 50%;
+	-webkit-animation: rotateUnfoldLeft .7s both ease;
+	-moz-transform-origin: 100% 50%;
+	-moz-animation: rotateUnfoldLeft .7s both ease;
+	transform-origin: 100% 50%;
+	animation: rotateUnfoldLeft .7s both ease;
 }
 
 @-webkit-keyframes rotateUnfoldLeft {
@@ -1005,3 +1019,5 @@ input[type="radio"]:checked + span{
 @keyframes rotateUnfoldLeft {
 	from { opacity: 0; transform: translateX(-100%) rotateY(-90deg); }
 }
+
+

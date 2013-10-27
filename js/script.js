@@ -174,20 +174,20 @@ $(function () {
         switch (animation) {
 
             case 'close':
-                outClass = 'pt-page-rotateFoldBottom';
-                inClass = 'pt-page-moveFromTopFade';
+                outClass = 'rotateFoldBottom';
+                inClass = 'rotateUnfoldTop';
                 break;
             case 'top':
-                outClass = 'pt-page-moveToTopFade';
-                inClass = 'pt-page-rotateUnfoldBottom';
+                outClass = 'rotateFoldTop';
+                inClass = 'rotateUnfoldBottom';
                 break;
             case 'right':
-                outClass = 'pt-page-moveToLeftFade';
-                inClass = 'pt-page-rotateUnfoldRight';
+                outClass = 'rotateFoldLeft';
+                inClass = 'rotateUnfoldRight';
                 break;
             case 'left':
-                outClass = 'pt-page-moveToRightFade';
-                inClass = 'pt-page-rotateUnfoldLeft';
+                outClass = 'rotateFoldRight';
+                inClass = 'rotateUnfoldLeft';
                 break;
         }
 
