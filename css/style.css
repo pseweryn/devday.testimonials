@@ -228,6 +228,8 @@ body {
 header{
     background-color: #fff;
     min-height: 65px;
+    position: fixed;
+    z-index: 1000;
 }
 
 .logoContainer {
@@ -581,7 +583,8 @@ input[type="radio"]:checked + span{
 .arrowContainer{
     cursor: pointer;
     position: relative;
-    top: -55px;    
+    top: 50%; 
+    z-index: 500;   
 }
 
 .arrowContainer.right span:last-child{
@@ -664,6 +667,80 @@ input[type="radio"]:checked + span{
 .clear{
     clear: both;
 }
+
+.perspective {
+	/*position: relative;*/
+	width: 100%;
+	height: 100%;
+	-webkit-perspective: 1200px;
+	-moz-perspective: 1200px;
+	perspective: 1200px;
+	
+	-webkit-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
+	backface-visibility: hidden;
+	
+	-webkit-transform-style: preserve-3d;
+	
+	overflow-y: hidden;
+}
+
+.page {
+    height: 0;
+	width: 100%;
+	position: absolute;
+	left: 0;
+	visibility: hidden;
+	overflow: hidden;
+	-webkit-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
+	backface-visibility: hidden;
+	
+	transform: translate3d(0, 0, 0);
+	-webkit-transform: translate3d(0, 0, 0);
+	-moz-transform: translate3d(0, 0, 0);
+	
+	-webkit-transform-style: preserve-3d;
+	-moz-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+	
+	overflow-y: hidden;
+		
+}
+
+.page-current {
+    height: initial;
+	visibility: visible;
+	z-index: 1;
+}
+
+#main
+{
+	width: 100%;
+	height: 1000px;
+	overflow-x: hidden;
+	overflow-y: hidden;
+	
+	-webkit-backface-visibility: visible;
+	-moz-backface-visibility: visible;
+	backface-visibility: visible;
+	
+	-webkit-transform-style: preserve-3d;
+}
+
+#page_main 
+{
+	width: 100%;
+	overflow-y: auto;
+	overflow-x: hidden;
+	
+	-webkit-backface-visibility: hidden;
+	
+	-webkit-overflow-scrolling: touch;
+	-webkit-transform: translate3d(0,0,0);
+	-webkit-transform: translateZ(0px);
+}
+
 /* ==|== media queries ======================================================
    EXAMPLE Media Query for Responsive Design.
    This example overrides the primary ('mobile first') styles
@@ -678,6 +755,7 @@ input[type="radio"]:checked + span{
     }
     header{
         min-height: 78px;
+        position: initial;
     }
     #abblogo{
         float: right;
@@ -735,10 +813,11 @@ input[type="radio"]:checked + span{
         right: 0;
     }
 
-    #page_main 
+    #page_main, .page-current 
     {
 	    height: 150%;
     }
+
 }
 
 
@@ -793,78 +872,6 @@ input[type="radio"]:checked + span{
 /* ==|== animations =======================================================
  
    ========================================================================== */
-
-.perspective {
-	/*position: relative;*/
-	width: 100%;
-	height: 100%;
-	-webkit-perspective: 1200px;
-	-moz-perspective: 1200px;
-	perspective: 1200px;
-	
-	-webkit-backface-visibility: hidden;
-	-moz-backface-visibility: hidden;
-	backface-visibility: hidden;
-	
-	-webkit-transform-style: preserve-3d;
-	
-	overflow-y: hidden;
-}
-
-.page {
-	width: 100%;
-	position: absolute;
-	left: 0;
-	visibility: hidden;
-	overflow: hidden;
-	-webkit-backface-visibility: hidden;
-	-moz-backface-visibility: hidden;
-	backface-visibility: hidden;
-	
-	transform: translate3d(0, 0, 0);
-	-webkit-transform: translate3d(0, 0, 0);
-	-moz-transform: translate3d(0, 0, 0);
-	
-	-webkit-transform-style: preserve-3d;
-	-moz-transform-style: preserve-3d;
-	transform-style: preserve-3d;
-	
-	overflow-y: hidden;
-		
-}
-
-.page-current {
-	visibility: visible;
-	z-index: 1;
-}
-
-#main
-{
-	width: 100%;
-	height: 1000px;
-	overflow-x: hidden;
-	overflow-y: hidden;
-	
-	-webkit-backface-visibility: visible;
-	-moz-backface-visibility: visible;
-	backface-visibility: visible;
-	
-	-webkit-transform-style: preserve-3d;
-}
-
-#page_main 
-{
-	width: 100%;
-	overflow-y: auto;
-	overflow-x: hidden;
-	
-	-webkit-backface-visibility: hidden;
-	
-	-webkit-overflow-scrolling: touch;
-	-webkit-transform: translate3d(0,0,0);
-	-webkit-transform: translateZ(0px);
-}
-
 
 .rotateFoldTop {
 	-webkit-transform-origin: 50% 100%;
