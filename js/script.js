@@ -103,17 +103,22 @@ $(function () {
 
     function formRadioChange() {
         $('input[type="radio"]').change(function () {
+            $('.f-ico').css('background-color', '#868686');
             if ($(this).is(':checked')) {
                 $('input[type="radio"]').not($(this)).prop('checked', false);
+                $(this).parent().prev().css('background-color', 'rgb(116, 192, 67)');
             }
         })
     }
 
     function formIconClick() {
         $('.f-ico').click(function () {
-            var $radio = $(this).next().find('input[type="radio"]');
+            var $clicked = $(this);
+            var $radio = $clicked.next().find('input[type="radio"]');
             $radio.prop('checked', true);
             $('input[type="radio"]').not($radio).prop('checked', false);
+            $clicked.css('background-color', 'rgb(116, 192, 67)');
+            $('.f-ico').not($clicked).css('background-color', '#868686');
         })
     }
 
