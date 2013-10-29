@@ -819,8 +819,11 @@ input[type="radio"]:checked + span{
 	    height: 150%;
     }
 
-}
-
+    .padded .feedbackIco, .padded .photosIco{
+       float: left;
+       margin-top: 0; 
+       margin-right: 10px;
+    }
 
 
 /* ==|== non-semantic helper classes ========================================
