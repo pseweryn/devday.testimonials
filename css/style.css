@@ -231,6 +231,7 @@ header{
     position: fixed;
     z-index: 1000;
     width: 100%;
+
 }
 
 .logoContainer {
@@ -585,7 +586,7 @@ input[type="radio"]:checked + span{
     cursor: pointer;
     position: relative;
     top: 50%; 
-    z-index: 500;   
+    z-index: 500;      
 }
 
 .arrowContainer.right span:last-child{
@@ -814,16 +815,17 @@ input[type="radio"]:checked + span{
         right: 0;
     }
 
-    #page_main, .page-current 
+    #page_main, .page-current
     {
 	    height: 150%;
     }
-
     .padded .feedbackIco, .padded .photosIco{
        float: left;
        margin-top: 0; 
        margin-right: 10px;
     }
+}
+
 
 
 /* ==|== non-semantic helper classes ========================================

@@ -8,6 +8,7 @@ $(function () {
     var is_firefox = navigator.userAgent.indexOf('Firefox') > -1;
     var is_safari = navigator.userAgent.indexOf("Safari") > -1;
     var is_mobile = document.body.clientWidth < 768;
+
     //var offsetnote = is_chrome || is_explorer ? 0 : 78;
     var $main = $('#main');
     var $pages = $main.children('div.page');
