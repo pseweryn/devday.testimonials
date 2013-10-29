@@ -473,23 +473,23 @@ a.reviewLink {
 }
 
 .f-srsly{
-    background-image: url(../img/feedback/u258.png);
+    background-image: url(../img/feedback/5.png);
 }
 
 .f-weak{
-    background-image: url(../img/feedback/u254.png);
+    background-image: url(../img/feedback/3.png);
 }
 
 .f-ok{
-    background-image: url(../img/feedback/u250.png);
+    background-image: url(../img/feedback/4.png);
 }
 
 .f-awesome{
-    background-image: url(../img/feedback/u242.png);
+    background-image: url(../img/feedback/1a.png);
 }
 
 .f-notBad{
-    background-image: url(../img/feedback/u246.png);
+    background-image: url(../img/feedback/2.png);
 }
 
 .fb-form{
@@ -519,10 +519,11 @@ a.reviewLink {
 .f-ico > span{
     display: block;
     position: absolute;
-    top: 15px;
     left: 0;
     right: 0;
     margin: 0 auto;
+    width: 100px;
+    height: 85px;
 }
 
 textarea{
