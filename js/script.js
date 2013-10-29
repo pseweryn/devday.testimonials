@@ -103,10 +103,9 @@ $(function () {
 
     function formRadioChange() {
         $('input[type="radio"]').change(function () {
-            $('.f-ico').css('background-color', '#868686');
             if ($(this).is(':checked')) {
                 $('input[type="radio"]').not($(this)).prop('checked', false);
-                $(this).parent().prev().css('background-color', 'rgb(116, 192, 67)');
+                setIconDivBackground($(this).parent().prev());
             }
         })
     }
@@ -117,9 +116,13 @@ $(function () {
             var $radio = $clicked.next().find('input[type="radio"]');
             $radio.prop('checked', true);
             $('input[type="radio"]').not($radio).prop('checked', false);
-            $clicked.css('background-color', 'rgb(116, 192, 67)');
-            $('.f-ico').not($clicked).css('background-color', '#868686');
+            setIconDivBackground($clicked);
         })
+    }
+
+    function setIconDivBackground($div) {
+        $div.css('background-color', 'rgb(116, 192, 67)');
+        $('.f-ico').not($div).css('background-color', '#868686');
     }
 
     function arrowClick() {
@@ -140,7 +143,7 @@ $(function () {
                 var next_ind = $next.attr('data-index');
                 if (!next_ind) {
                     next_ind = 1;
-                } 
+                }
                 $('#closeBack').removeClass().addClass('icon').addClass('closeC' + next_ind + '');
                 openPage('right', next_ind);
             }
