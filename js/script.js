@@ -6,6 +6,8 @@ $(function () {
     var is_chrome = navigator.userAgent.indexOf('Chrome') > -1;
     var is_explorer = navigator.userAgent.indexOf('MSIE') > -1;
     var is_firefox = navigator.userAgent.indexOf('Firefox') > -1;
+    var is_safari = navigator.userAgent.indexOf("Safari") > -1;
+    var is_mobile = document.body.clientWidth < 768;
     //var offsetnote = is_chrome || is_explorer ? 0 : 78;
     var $main = $('#main');
     var $pages = $main.children('div.page');
@@ -28,7 +30,7 @@ $(function () {
     var support = Modernizr.cssanimations;
 
     function dirtyTopHack() {
-        if (is_chrome || is_explorer) {
+        if (is_chrome || is_explorer || is_safari) {
             $('.page').css('top', '0');
         }
     }
