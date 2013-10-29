@@ -559,29 +559,6 @@ input[type="radio"]{
 	opacity: 0;
     cursor: pointer;
 }
- 
-input[type="radio"] + span{
-    display: none;
-	border: 1px solid #fff;
-    position: absolute;
-    top: 4px;
-    left: 5px;
-    min-height: 95px;
-    min-width: 115px;
-    border-radius: 5px;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    float: left;
-    cursor: pointer;
-}
- 
-input[type="radio"]:checked + span{
-	display: inline;
-}
-
-.checked {
-    font-weight: bold
-}
 
 .arrowContainer{
     cursor: pointer;
