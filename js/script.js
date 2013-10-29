@@ -130,24 +130,19 @@ $(function () {
                 var $prev = $parent.prev();
                 var prev_ind = $prev.attr('data-index');
                 if ($prev.hasClass('alpha60')) {
-                    openPage('close', 0);
-                    hideCloseIcon();
-                } else {
-                    $('#closeBack').removeClass().addClass('icon').addClass('closeC' + prev_ind + '');
-                    openPage('left', prev_ind);
+                    prev_ind = 4;
                 }
-
+                $('#closeBack').removeClass().addClass('icon').addClass('closeC' + prev_ind + '');
+                openPage('left', prev_ind);
             }
             else {
                 var $next = $parent.next();
                 var next_ind = $next.attr('data-index');
                 if (!next_ind) {
-                    openPage('close', 0);
-                    hideCloseIcon();
-                } else {
-                    $('#closeBack').removeClass().addClass('icon').addClass('closeC' + next_ind + '');
-                    openPage('right', next_ind);
-                }
+                    next_ind = 1;
+                } 
+                $('#closeBack').removeClass().addClass('icon').addClass('closeC' + next_ind + '');
+                openPage('right', next_ind);
             }
         })
     }
