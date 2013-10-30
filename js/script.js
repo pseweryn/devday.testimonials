@@ -45,7 +45,16 @@ $(function () {
         $pages.eq(current).removeClass().addClass('large-12 columns overlay alpha60 page').addClass('page-current');
     }
 
-    function hideCloseIcon() {
+    function setArrowClasses(ind) {
+        $('.arrowBack').removeClass().addClass('arrowBack icon bg' + ind + 'B');
+        $('.arrow').removeClass().addClass('arrow icon bg' + ind + 'A');
+    }
+
+    function setCloseClasses(ind) {
+        $('#closeBack').removeClass().addClass('icon closeC' + ind + '');
+    }
+
+    function hideHeaderElems() {
         $('.logoContainer > div').not('.close').css('visibility', '');
         $('#closeBack').removeClass().addClass('icon');
         $('.closeFront').fadeOut();
@@ -68,7 +77,7 @@ $(function () {
             var tile_ind = $(this).attr('data-index');
             $('.logoContainer > div').not('.close').css('visibility', 'hidden');
             $('#closeBack').addClass('closeC' + tile_ind + '');
-
+            setArrowClasses(tile_ind);
             if (isAnimating) {
                 return false;
             }
@@ -81,6 +90,8 @@ $(function () {
             if (isAnimating) {
                 return false;
             }
+            $('.arrowBack').removeClass().addClass('arrowBack');
+            $('.arrow').removeClass().addClass('arrow'); ;
             openPage('close', 0);
         })
     }
@@ -129,22 +140,25 @@ $(function () {
         $('.arrowContainer').click(function () {
             var $a = $(this);
             var $parent = $a.parent();
+            var $currentPage = $('#main').find('.page-current');
             if ($a.hasClass('left')) {
-                var $prev = $parent.prev();
+                var $prev = $currentPage.prev();
                 var prev_ind = $prev.attr('data-index');
                 if ($prev.hasClass('alpha60')) {
                     prev_ind = 4;
                 }
-                $('#closeBack').removeClass().addClass('icon').addClass('closeC' + prev_ind + '');
+                setCloseClasses(prev_ind);
+                setArrowClasses(prev_ind);
                 openPage('left', prev_ind);
             }
             else {
-                var $next = $parent.next();
-                var next_ind = $next.attr('data-index');
+                var $nextPage = $currentPage.next();
+                var next_ind = $nextPage.attr('data-index');
                 if (!next_ind) {
                     next_ind = 1;
                 }
-                $('#closeBack').removeClass().addClass('icon').addClass('closeC' + next_ind + '');
+                setCloseClasses(next_ind);
+                setArrowClasses(next_ind);
                 openPage('right', next_ind);
             }
         })
@@ -159,16 +173,10 @@ $(function () {
 		outClass = '', inClass = '';
 
         if (index == 0) {
-
-            hideCloseIcon();
-            //$("#page_main").scrollTop(offsetnote);
-
+            hideHeaderElems();
         }
         else {
-
-            //$nextPage.scrollTop(offsetnote);
             $('.closeFront').delay(800).fadeIn('slow');
-
         }
 
         if (isAnimating) {

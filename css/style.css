@@ -562,9 +562,16 @@ input[type="radio"]{
 
 .arrowContainer{
     cursor: pointer;
-    position: relative;
+    position: fixed;
     top: 50%; 
     z-index: 500;      
+}
+
+.arrowContainer.left{
+    left: 5px;    
+}
+.arrowContainer.right{
+    right: 5px;    
 }
 
 .arrowContainer.right span:last-child{
@@ -592,35 +599,35 @@ input[type="radio"]{
 }
 
 
-.blueA{
+.bg1A{
     background-image: url("../img/u100.png");
 }
 
-.blueB{
+.bg1B{
     background-image: url("../img/u98.png");
 }
 
-.lightgreenA{
+.bg2A{
     background-image: url("../img/u188.png");
 }
 
-.lightgreenB{
+.bg2B{
     background-image: url("../img/u186.png");
 }
 
-.greyA{
+.bg3A{
     background-image: url("../img/u217.png");
 }
 
-.greyB{
+.bg3B{
     background-image: url("../img/u215.png");
 }
 
-.greenA{
+.bg4A{
     background-image: url("../img/u267.png");
 }
 
-.greenB{
+.bg4B{
     background-image: url("../img/u265.png");
 }
 
@@ -780,9 +787,6 @@ input[type="radio"]{
     }
     .review:nth-child(even){
         float: right;
-    }
-    .arrowContainer{
-        top: 30%;    
     }
     .close{
         margin-top: 0;
