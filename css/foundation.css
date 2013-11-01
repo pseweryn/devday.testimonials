@@ -18,7 +18,6 @@ body {
   font-weight: normal;
   font-style: normal;
   line-height: 1;
-  position: relative;
   cursor: default;
   text-shadow:3px 3px 5px rgba(0, 0, 0, 0.3490196);
   -webkit-text-shadow:3px 3px 5px rgba(0, 0, 0, 0.3490196);

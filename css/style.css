@@ -246,11 +246,6 @@ header{
     margin-top: 9px;
 }
 
-.overlay{
-   position: absolute;
-   top: 65px;
-}
-
 .alpha60 {
     /* Fallback for web browsers that don't support RGBa */
     background-color: rgb(102, 102, 102);
@@ -656,7 +651,7 @@ input[type="radio"]{
 }
 
 .perspective {
-	/*position: relative;*/
+    
 	width: 100%;
 	height: 100%;
 	-webkit-perspective: 1200px;
@@ -669,7 +664,6 @@ input[type="radio"]{
 	
 	-webkit-transform-style: preserve-3d;
 	
-	overflow-y: hidden;
 }
 
 .page {
@@ -698,21 +692,21 @@ input[type="radio"]{
 .page-current {
     height: initial;
 	visibility: visible;
-	z-index: 1;
 }
 
 #main
 {
 	width: 100%;
-	height: 1000px;
-	overflow-x: hidden;
-	overflow-y: hidden;
-	
+    position: absolute;
+    top: 65px;
+    bottom: 30px;
+    	
 	-webkit-backface-visibility: visible;
 	-moz-backface-visibility: visible;
 	backface-visibility: visible;
 	
 	-webkit-transform-style: preserve-3d;
+
 }
 
 #page_main 
@@ -730,12 +724,15 @@ input[type="radio"]{
 
 footer{
     background-color: #333333;
-    height: 30px;
+    min-height: 30px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
 
 footer span{
     display: inline-block;
-    padding: 4px 10px 4px 0;
+    padding: 4px 10px;
     float: left;
 }
 
@@ -746,6 +743,10 @@ footer span{
     height: 26px;
     margin: 0 10px;
     padding-left: 10px
+}
+
+.edition{
+    display: block;
 }
 
 /* ==|== media queries ======================================================
@@ -766,13 +767,6 @@ footer span{
     }
     #abblogo{
         float: right;
-    }
-    .overlay{
-        height: 150%;
-        top: 78px;
-        bottom: 0;
-        left: 0;
-        right: 0;
     }
     .tileContainer{
         position: absolute;
@@ -816,7 +810,10 @@ footer span{
         bottom: 0;
         right: 0;
     }
-
+    #main{
+        position: absolute;
+        top: 78px;
+    }
     #page_main, .page-current
     {
 	    height: 150%;
