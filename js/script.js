@@ -42,7 +42,7 @@ $(function () {
             $section.data('originalClassList', $section.attr('class'));
         });
 
-        $sections.eq(current).removeClass().addClass('large-12 columns overlay alpha60 section').addClass('section-current');
+        $sections.eq(current).removeClass().addClass('large-12 columns alpha60 section').addClass('section-current');
     }
 
     function setArrowClasses(ind) {
@@ -256,6 +256,29 @@ $(function () {
         $insection.attr('class', $insection.data('originalClassList') + ' section-current');
     }
 
+    function reloadClick() {
+        $('.reload').click(function () {
+            $('.f-msg').show();
+            $('.f-confirmation').hide();
+        })
+    }
+
+    function sendButtonClick() {
+        $('.button').click(function () {
+            $('#env').addClass('env-animating').addClass('moveFromBottomFade');
+
+            setTimeout(function () {
+                $('#env').addClass('moveToRightFade');
+                $('.f-msg').hide();
+                $('.f-confirmation').show();
+            }, 300)
+
+            setTimeout(function () {
+                $('#env').removeClass().addClass('large-12 small-12');
+            }, 600)
+        })
+    }
+
     function init() {
 
         dirtyTopHack();
@@ -266,6 +289,8 @@ $(function () {
         formIconClick();
         arrowClick();
         tilesClick();
+        sendButtonClick();
+        reloadClick();
 
         formRadioChange();
 
