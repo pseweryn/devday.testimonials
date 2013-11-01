@@ -11,14 +11,14 @@ $(function () {
 
     //var offsetnote = is_chrome || is_explorer ? 0 : 78;
     var $main = $('#main');
-    var $pages = $main.children('div.page');
+    var $sections = $main.children('div.section');
     var $close = $('.close');
     var current = 0;
-    var $currPage = "";
-    var $nextPage = "";
+    var $curr = "";
+    var $next = "";
     var isAnimating = false;
-    var endCurrPage = false;
-    var endNextPage = false;
+    var endCurr = false;
+    var endNext = false;
     var animEndEventNames = {
         'WebkitAnimation': 'webkitAnimationEnd',
         'OAnimation': 'oAnimationEnd',
@@ -32,17 +32,17 @@ $(function () {
 
     function dirtyTopHack() {
         if (is_chrome || is_explorer || is_safari) {
-            $('.page').css('top', '0');
+            $('.section').css('top', '0');
         }
     }
 
-    function setPageClasses() {
-        $pages.each(function () {
-            var $page = $(this);
-            $page.data('originalClassList', $page.attr('class'));
+    function setSectionClasses() {
+        $sections.each(function () {
+            var $section = $(this);
+            $section.data('originalClassList', $section.attr('class'));
         });
 
-        $pages.eq(current).removeClass().addClass('large-12 columns overlay alpha60 page').addClass('page-current');
+        $sections.eq(current).removeClass().addClass('large-12 columns overlay alpha60 section').addClass('section-current');
     }
 
     function setArrowClasses(ind) {
@@ -81,7 +81,7 @@ $(function () {
             if (isAnimating) {
                 return false;
             }
-            openPage('top', tile_ind);
+            openSection('top', tile_ind);
         })
     }
 
@@ -92,7 +92,7 @@ $(function () {
             }
             $('.arrowBack').removeClass().addClass('arrowBack');
             $('.arrow').removeClass().addClass('arrow'); ;
-            openPage('close', 0);
+            openSection('close', 0);
         })
     }
 
@@ -140,36 +140,36 @@ $(function () {
         $('.arrowContainer').click(function () {
             var $a = $(this);
             var $parent = $a.parent();
-            var $currentPage = $('#main').find('.page-current');
+            var $currentSection = $('#main').find('.section-current');
             if ($a.hasClass('left')) {
-                var $prev = $currentPage.prev();
+                var $prev = $currentSection.prev();
                 var prev_ind = $prev.attr('data-index');
                 if ($prev.hasClass('alpha60')) {
                     prev_ind = 4;
                 }
                 setCloseClasses(prev_ind);
                 setArrowClasses(prev_ind);
-                openPage('left', prev_ind);
+                openSection('left', prev_ind);
             }
             else {
-                var $nextPage = $currentPage.next();
-                var next_ind = $nextPage.attr('data-index');
+                var $nextSection = $currentSection.next();
+                var next_ind = $nextSection.attr('data-index');
                 if (!next_ind) {
                     next_ind = 1;
                 }
                 setCloseClasses(next_ind);
                 setArrowClasses(next_ind);
-                openPage('right', next_ind);
+                openSection('right', next_ind);
             }
         })
     }
 
-    function openPage(animation, index) {
+    function openSection(animation, index) {
 
-        $currPage = $pages.eq(current);
+        $curr = $sections.eq(current);
         current = index;
 
-        $nextPage = $pages.eq(current).addClass('page-current'),
+        $next = $sections.eq(current).addClass('section-current'),
 		outClass = '', inClass = '';
 
         if (index == 0) {
@@ -205,61 +205,61 @@ $(function () {
                 break;
         }
 
-        $currPage.addClass(outClass).bind(animEndEventName, onInAnimation);
-        $nextPage.addClass(inClass).bind(animEndEventName, onOutAnimation);
+        $curr.addClass(outClass).bind(animEndEventName, onInAnimation);
+        $next.addClass(inClass).bind(animEndEventName, onOutAnimation);
 
         if (!support) {
-            onEndAnimation($currPage, $nextPage);
+            onEndAnimation($curr, $next);
         }
 
     }
 
     function onInAnimation() {
 
-        endCurrPage = true;
-        if (endNextPage) {
-            onEndAnimation($currPage, $nextPage);
+        endCurr = true;
+        if (endNext) {
+            onEndAnimation($curr, $next);
         }
 
-        $currPage.unbind(animEndEventName, onInAnimation);
+        $curr.unbind(animEndEventName, onInAnimation);
     }
 
     function onOutAnimation() {
 
-        endNextPage = true;
-        if (endCurrPage) {
-            onEndAnimation($currPage, $nextPage);
+        endNext = true;
+        if (endCurr) {
+            onEndAnimation($curr, $next);
         }
 
-        $nextPage.unbind(animEndEventName, onOutAnimation);
+        $next.unbind(animEndEventName, onOutAnimation);
     }
 
-    function onEndAnimation($outpage, $inpage) {
-        endCurrPage = false;
-        endNextPage = false;
-        resetPage($outpage, $inpage);
+    function onEndAnimation($outsection, $insection) {
+        endCurr = false;
+        endNext = false;
+        resetSection($outsection, $insection);
         isAnimating = false;
     }
 
     function noAnimation() {
         isAnimating = true;
-        endCurrPage = true;
-        endNextPage = true;
-        endCurrPage = false;
-        endNextPage = false;
-        resetPage($currPage, $nextPage);
+        endCurr = true;
+        endNext = true;
+        endCurr = false;
+        endNext = false;
+        resetSection($curr, $next);
         isAnimating = false;
     }
 
-    function resetPage($outpage, $inpage) {
-        $outpage.attr('class', $outpage.data('originalClassList'));
-        $inpage.attr('class', $inpage.data('originalClassList') + ' page-current');
+    function resetSection($outsection, $insection) {
+        $outsection.attr('class', $outsection.data('originalClassList'));
+        $insection.attr('class', $insection.data('originalClassList') + ' section-current');
     }
 
     function init() {
 
         dirtyTopHack();
-        setPageClasses();
+        setSectionClasses();
 
         closeClick();
         filtersClick();

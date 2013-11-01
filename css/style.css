@@ -666,7 +666,7 @@ input[type="radio"]{
 	
 }
 
-.page {
+.section {
     height: 0;
 	width: 100%;
 	position: absolute;
@@ -689,7 +689,7 @@ input[type="radio"]{
 		
 }
 
-.page-current {
+.section-current {
     height: initial;
 	visibility: visible;
 }
@@ -709,7 +709,7 @@ input[type="radio"]{
 
 }
 
-#page_main 
+#section_main 
 {
 	width: 100%;
 	overflow-y: auto;
@@ -814,7 +814,7 @@ footer span{
         position: absolute;
         top: 78px;
     }
-    #page_main, .page-current
+    #section_main, .section-current
     {
 	    height: 150%;
     }
