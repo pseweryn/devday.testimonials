@@ -802,8 +802,8 @@ button, .button {
   border-color: #007DC0;
   color: white; }
   button:hover, button:focus, .button:hover, .button:focus {
-    background-color: #3a3a3a;
-    border-color: #3a3a3a;
+    background-color: rgb(116, 192, 67);
+    border-color: rgb(116, 192, 67);
   }
   button:hover, button:focus, .button:hover, .button:focus {
     color: white; }
