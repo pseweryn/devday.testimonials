@@ -729,6 +729,10 @@ input[type="radio"]{
 	visibility: visible;
 }
 
+.section-current .row{
+    padding-bottom: 60px; 
+}
+
 #main
 {
 	width: 100%;
