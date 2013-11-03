@@ -531,9 +531,9 @@ a.reviewLink {
 .f-container{
    display: inline-block;
    margin: 5px;
-    min-height: 95px;
-    min-width: 110px;
-    float: left;
+   min-height: 150px;
+   min-width: 110px;
+   float: left;
 }
 
 .f-ico{
@@ -556,6 +556,10 @@ a.reviewLink {
     margin: 0 auto;
     width: 100px;
     height: 85px;
+}
+
+.f-radio{
+    text-align: center;
 }
 
 textarea{
