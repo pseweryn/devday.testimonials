@@ -389,22 +389,26 @@ header{
 }
 
 .closeC1{
-    background-image: url(../img/u325.png);
+    background: url(../img/bg-sprite.png) no-repeat top left;
+    background-position: 0 -300px;
     display: block !important;
 }
 
 .closeC2{
-    background-image: url(../img/u337.png);
+    background: url(../img/bg-sprite.png) no-repeat top left;
+    background-position: 0 -600px;
     display: block !important;
 }
 
 .closeC3{
-    background-image: url(../img/u329.png);
+    background: url(../img/bg-sprite.png) no-repeat top left;
+    background-position: 0 -400px;
     display: block !important;
 }
 
 .closeC4{
-    background-image: url(../img/u333.png);
+    background: url(../img/bg-sprite.png) no-repeat top left;
+    background-position: 0 -500px;
     display: block !important;
 }
 
@@ -640,7 +644,8 @@ input[type="radio"]{
 }
 
 .bg1B{
-    background-image: url("../img/u98.png");
+    background: url(../img/bg-sprite.png) no-repeat top left;
+    background-position: 0 -700px;
 }
 
 .bg2A{
@@ -648,7 +653,8 @@ input[type="radio"]{
 }
 
 .bg2B{
-    background-image: url("../img/u186.png");
+    background: url(../img/bg-sprite.png) no-repeat top left;
+    background-position: 0 0;
 }
 
 .bg3A{
@@ -656,7 +662,8 @@ input[type="radio"]{
 }
 
 .bg3B{
-    background-image: url("../img/u215.png");
+    background: url(../img/bg-sprite.png) no-repeat top left;
+    background-position: 0 -100px;
 }
 
 .bg4A{
@@ -664,7 +671,8 @@ input[type="radio"]{
 }
 
 .bg4B{
-    background-image: url("../img/u265.png");
+    background: url(../img/bg-sprite.png) no-repeat top left;
+    background-position: 0 -200px;
 }
 
 .seeYa{
@@ -749,7 +757,6 @@ input[type="radio"]{
 	backface-visibility: visible;
 	
 	-webkit-transform-style: preserve-3d;
-
 }
 
 #section_main 
