@@ -74,13 +74,13 @@ $(function () {
     function tilesClick() {
 
         $('.tileContainer > div').click(function () {
+            if (isAnimating) {
+                return false;
+            }
             var tile_ind = $(this).attr('data-index');
             $('.logoContainer > div').not('.close').css('visibility', 'hidden');
             $('#closeBack').addClass('closeC' + tile_ind + '');
             setArrowClasses(tile_ind);
-            if (isAnimating) {
-                return false;
-            }
             openSection('top', tile_ind);
         })
     }
@@ -138,6 +138,9 @@ $(function () {
 
     function arrowClick() {
         $('.arrowContainer').click(function () {
+            if (isAnimating) {
+                return false;
+            }
             var $a = $(this);
             var $parent = $a.parent();
             var $currentSection = $('#main').find('.section-current');
@@ -166,6 +169,8 @@ $(function () {
 
     function openSection(animation, index) {
 
+        isAnimating = true;
+
         $curr = $sections.eq(current);
         current = index;
 
@@ -178,12 +183,6 @@ $(function () {
         else {
             $('.closeFront').delay(800).fadeIn('slow');
         }
-
-        if (isAnimating) {
-            return false;
-        }
-
-        isAnimating = true;
 
         switch (animation) {
 
