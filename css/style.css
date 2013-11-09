@@ -429,6 +429,8 @@ header{
 
 .review p {
     padding: 10px;
+    width: 93%;
+    float: right;
 }
 
 .review p:last-child {
@@ -451,6 +453,36 @@ a.reviewLink {
 
 .review span.reviewerContact{
     font-size: 13px;
+}
+
+.tw{
+    background-image: url(../img/tw.png);
+}
+
+.fb{
+    background-image: url(../img/294_button_facebook.png);
+}
+
+.bl{
+    background-image: url(../img/blog.png);
+}
+
+.smallIco{
+    background-size: 100% auto;
+    display: inline-block;
+    height: 30px;
+    width: 30px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 5px;
+    right: 0;   
+}
+
+.reviewIco{
+    display: inline-block;
+    width: 7%;
+    position: relative;
 }
 
 .padded, .filters{
