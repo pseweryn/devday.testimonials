@@ -582,6 +582,10 @@ textarea{
     -moz-border-radius: 5px;
 }
 
+textarea:focus {
+    background: #868686;  
+}
+
 label.radioLabel{
     display: inline;
     color: #fff;
