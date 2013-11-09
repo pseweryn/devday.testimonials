@@ -278,20 +278,6 @@ $(function () {
         })
     }
 
-    function textareaFocus() {
-        $("textarea")
-          .focus(function () {
-              if (this.value === this.defaultValue) {
-                  this.value = '';
-              }
-          })
-          .blur(function () {
-              if (this.value === '') {
-                  this.value = this.defaultValue;
-              }
-          });
-    }
-
     function init() {
 
         dirtyTopHack();
@@ -306,7 +292,6 @@ $(function () {
         reloadClick();
 
         formRadioChange();
-        textareaFocus();
 
         initLightbox();
     }
