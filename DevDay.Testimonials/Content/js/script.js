@@ -16,6 +16,7 @@ $(function () {
     var current = 0;
     var $curr = "";
     var $next = "";
+    var opinionId = "";
     var isAnimating = false;
     var endCurr = false;
     var endNext = false;
@@ -115,6 +116,7 @@ $(function () {
     function formRadioChange() {
         $('input[type="radio"]').change(function () {
             if ($(this).is(':checked')) {
+                opinionId = $(this).attr('id').split("-").pop();
                 $('input[type="radio"]').not($(this)).prop('checked', false);
                 setIconDivBackground($(this).parent().prev());
             }
@@ -126,6 +128,7 @@ $(function () {
             var $clicked = $(this);
             var $radio = $clicked.next().find('input[type="radio"]');
             $radio.prop('checked', true);
+            opinionId = $radio.attr('id').split("-").pop();
             $('input[type="radio"]').not($radio).prop('checked', false);
             setIconDivBackground($clicked);
         })
@@ -256,7 +259,7 @@ $(function () {
     }
 
     function reloadClick() {
-        $('.reload').click(function () {
+        $('div.feedback').on('click', '.reload', function () {
             $('.f-msg').show();
             $('.f-confirmation').hide();
         })
@@ -266,15 +269,28 @@ $(function () {
         $('.button').click(function () {
             $('#env').addClass('env-animating').addClass('moveFromBottomFade');
 
-            setTimeout(function () {
-                $('#env').addClass('moveToRightFade');
-                $('.f-msg').hide();
-                $('.f-confirmation').show();
-            }, 300)
-
-            setTimeout(function () {
-                $('#env').removeClass().addClass('large-12 small-12');
-            }, 600)
+            var data = '{opinionId: "' + opinionId + '", ' + 'message: "' + $('textarea').val() + '"}';
+            $.ajax({
+                url: '/feedback',
+                type: 'POST',
+                data: data,
+                datatype: 'JSON',
+                contentType: 'application/json',
+                error: function () {
+                    $('.f-confirmation').html("<p><label class='error'>Your feedback was not sent due to an error</label></p>" +
+                        "<p>Want to try again? <span class='reload'>Reload form</span></p>");
+                },
+                complete: function () {
+                    setTimeout(function () {
+                        $('#env').addClass('moveToRightFade');
+                        $('.f-msg').hide();
+                        $('.f-confirmation').show();
+                    }, 300)
+                    setTimeout(function () {
+                        $('#env').removeClass().addClass('large-12 small-12');
+                    }, 600)
+                }
+            });
         })
     }
 

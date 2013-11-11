@@ -503,23 +503,23 @@ a.reviewLink {
     display: inline-block;
 }
 
-.f-srsly{
+.f-5{
     background-image: url(../img/feedback/5.png);
 }
 
-.f-weak{
+.f-4{
     background-image: url(../img/feedback/3.png);
 }
 
-.f-ok{
+.f-3{
     background-image: url(../img/feedback/4.png);
 }
 
-.f-awesome{
+.f-1{
     background-image: url(../img/feedback/1a.png);
 }
 
-.f-notBad{
+.f-2{
     background-image: url(../img/feedback/2.png);
 }
 
@@ -562,6 +562,10 @@ a.reviewLink {
 .f-confirmation .reload{
     cursor: pointer;
     text-decoration: underline;
+}
+
+.f-confirmation .error {
+    font-size: 1em;
 }
 
 .f-container{
