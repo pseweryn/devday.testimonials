@@ -1,0 +1,45 @@
+﻿@using DevDay.Testimonials.Models
+@inherits Nancy.ViewEngines.Razor.NancyRazorViewBase<System.Collections.Generic.IEnumerable<Opinion>>
+
+
+<div class="large-12 columns section feedback" data-index="3">
+    <div class="row">
+        <div class="large-8 centered padded">
+            <span class="icon feedbackIco"></span>
+            <h4>We'd love to know what you think. Give us some feedback!</h4>
+        </div>
+        <div class="large-8 centered padded fb-form">
+            <div class="large-12">
+                <h4>How did you like the event?</h4>
+            </div>
+
+            @foreach (var opinion in Model)
+            {
+                <div class="f-container large-2 small-2">
+                    <div class="f-ico">
+                        <span class="radioSpan f-@opinion.Id icon"></span>
+                    </div>
+                    <div class="f-radio">
+                        <label for="f-@opinion.Id" class="radioLabel">@opinion.Text</label>
+                        <input type="radio" name="f-@opinion.Id" id="f-@opinion.Id" />
+                    </div>
+                </div>
+            }
+
+        </div>
+        <div class="large-8 fb-form centered padded clear">
+            <h4>Do you want to add something?</h4>
+            <div class="f-msg">
+                <textarea></textarea>
+                <input type="submit"  class="small button" value="Submit" />
+            </div>     
+            <div class="f-confirmation large-12 small-12">
+                <p>Your feedback has been sent. Thank You!</p>
+                <p>Want to add some more? <span class="reload">Reload form</span></p>
+            </div> 
+            <div id="env" class="large-12 small-12">
+                <div class="f-env"></div>
+            </div>                    
+        </div>
+    </div>
+</div>

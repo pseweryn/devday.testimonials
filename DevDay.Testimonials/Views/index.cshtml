@@ -1,0 +1,137 @@
+﻿@using DevDay.Testimonials.Models
+@inherits Nancy.ViewEngines.Razor.NancyRazorViewBase<System.Collections.Generic.IEnumerable<Opinion>>
+
+<!doctype html>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!-- Consider adding a manifest.appcache: h5bp.com/d/Offline -->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+
+  <!-- Use the .htaccess and remove these lines to avoid edge case issues.
+       More info: h5bp.com/i/378 -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <title>Devday 2013 Testimonials</title>
+  <meta name="description" content="">
+
+  <!-- Mobile viewport optimized: h5bp.com/viewport -->
+  <meta name="viewport" content="width=device-width">
+
+  <!-- Place favicon.ico and apple-touch-icon.png in the root directory: mathiasbynens.be/notes/touch-icons -->
+  <link href="../Content/css/foundation.css" rel="stylesheet" />
+  <link href="../Content/css/foundation.css" rel="stylesheet" />
+  <link href="../Content/css/magnific-popup.css" rel="stylesheet" />
+  <link href="../Content/css/style.css" rel="stylesheet" />
+
+  <!-- More ideas for your <head> here: h5bp.com/d/head-Tips -->
+  <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,300,800,700,400italic|PT+Serif:400,400italic" rel="stylesheet">
+
+  <!-- All JavaScript at the bottom, except this Modernizr build.
+       Modernizr enables HTML5 elements & feature detects for optimal performance.
+       Create your own custom Modernizr build: www.modernizr.com/download/ -->
+  <script src="../Content/js/libs/modernizr-2.5.3.min.js"></script>
+</head>
+<body>
+  <!-- Prompt IE 6 users to install Chrome Frame. Remove this if you support IE 6.
+       chromium.org/developers/how-tos/chrome-frame-getting-started -->
+  <!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
+  <header>
+    <div class="large-12 columns logoContainer">
+        <div class="large-4 small-4 columns">
+            <a id="devlogo" href="http://devday.pl/"><img src="../Content/img/logo2013.png" alt="DevDay logo" /></a>
+        </div>
+        <div class="large-4 small-4 columns close">
+            <span id="closeBack" class="icon"></span>
+            <span class="closeFront icon"></span>
+        </div>
+        <div class="large-4 small-4 columns abblogoContainer">
+            <a id="abblogo" href="http://new.abb.com/pl"><img src="../Content/img/logo3.png" alt="ABB logo" /></a>
+        </div>
+    </div>
+  </header>
+  <div role="main" id="main" class="perspective">
+        <div class="arrowContainer left">
+            <span class="arrowBack icon"></span>
+            <span class="arrow icon"></span>
+        </div>
+        <div class="arrowContainer right">
+            <span class="arrowBack icon"></span>
+            <span class="arrow icon"></span>
+        </div>
+      <div id="section_main" class="large-12 columns alpha60 section">
+        <div class="large-4 small-12 columns summary">
+            <h4>Devday Summary</h4>
+            <h3><span class="font48">20th</span><span class="font28"> September 2013</span></h3>
+            <h3><span class="font48">374</span><span class="font28"> attendees</span></h3>
+            <h3><span class="font48">12</span><span class="font28"> speakers</span></h3>
+            <h2><span class="font100">1</span><span class="font55"> community</span></h2>
+        </div>
+        <div class="large-6 small-12 columns tileColumn">
+            <div class="tileContainer">
+                <div class="large-6 small-8 columns networkTile" data-index="1">
+                    <span class="icon twitterIco"></span>
+                    <span class="icon tubeIco"></span>
+                    <h4>Network went crazy.</h4>
+                    <h4>View DevDay reviews</h4>
+                </div>
+                <div class="large-6 small-8 columns statsTile" data-index="2">
+                    <span class="icon statsIco"></span>
+                    <h4>Some useless stats.</h4>
+                    <h4>View event in numbers</h4>
+                </div>
+                <div class="large-6 small-8 columns feedbackTile" data-index="3">
+                    <span class="icon feedbackIco"></span>
+                    <h4>Give us some feedback</h4>
+                </div>
+                <div class="large-6 small-8 columns photosTile" data-index="4">
+                    <span class="icon photosIco"></span>
+                    <h4>View photos from the event</h4>
+                </div>
+            </div>
+        </div>
+        <div class="large-2 small-2 columns">
+        </div>
+      </div>
+      @Html.Partial("network.cshtml")
+      @Html.Partial("stats.cshtml")
+      @Html.Partial("feedback.cshtml", Model)
+      @Html.Partial("photos.cshtml")
+  </div>
+  <footer>
+      <div class="large-12">
+          <span class="foot-ico"></span>
+          <span>DEVDAY Editions:</span>
+          <span><a href="http://devday.pl/2013">2013</a></span>
+          <span><a href="http://devday.pl/2012">2012</a></span>
+          <span><a href="http://devday.pl">2011</a></span>
+          <span>|</span>
+          <span><a href="mailto:contact@devday.pl">Contact Us</a></span>
+      </div>
+  </footer>
+
+
+  <!-- JavaScript at the bottom for fast page loading -->
+
+  <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="../Content/js/libs/jquery-1.7.1.min.js"><\/script>')</script>
+
+  <!-- scripts concatenated and minified via build script -->
+  <script src="../Content/js/libs/jquery.magnific-popup.min.js"></script>
+  <script src="../Content/js/script.js"></script>
+  <!-- end scripts -->
+
+  <!-- Asynchronous Google Analytics snippet. Change UA-XXXXX-X to be your site's ID.
+       mathiasbynens.be/notes/async-analytics-snippet -->
+  <script>
+    var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+    s.parentNode.insertBefore(g,s)}(document,'script'));
+  </script>
+</body>
+</html>
