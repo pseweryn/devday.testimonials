@@ -8,6 +8,7 @@ namespace DevDay.Testimonials
     public class IndexModule : NancyModule
     {
         TestimonialsContext _db = new TestimonialsContext();
+
         public IndexModule()
         {
             Get["/"] = parameters =>
