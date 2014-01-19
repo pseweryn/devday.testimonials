@@ -862,8 +862,13 @@ footer span{
         position: absolute;
         top: 140px;
     } 
+    .tileContainer > div{
+        padding-right: 0;
+    }
     .review{
         width: 45%;
+        max-height: 180px;
+        overflow: hidden;
     }
     .padded h4, .filters h4{
         display: inline;
