@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using System.Text.RegularExpressions;
 using DevDay.Testimonials.Models;
 using Nancy;
 using Nancy.ModelBinding;
@@ -20,10 +21,19 @@ namespace DevDay.Testimonials
             Post["/feedback"] = _ =>
             {
                 var feedback = this.Bind<Feedback>(f => f.Id, f => f.Opinion);
+                feedback.Message.Sanitize();
                 _db.FeedbackItems.Add(feedback);
                 _db.SaveChanges();
                 return HttpStatusCode.OK;
             };
+        }
+    }
+
+    public static class BetterSafeThanSorry
+    {
+        public static string Sanitize(this string s)
+        {
+            return Regex.Replace(s, @"[^\w\s][^:)]", string.Empty);  
         }
     }
 }
